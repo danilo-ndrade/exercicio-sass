@@ -1,0 +1,22 @@
+MÓDULOS se fererem a organização dos estilos de diferentes seções
+em diferentes arquivos.
+
+    para isso é necessário importar os arquivos dentro de outros. 
+    "@use" nome_do_arquivo
+
+    ao utilizar variaveis declaradas em outros arquivos se deve apontar
+    de qual arquivo ela vem. 
+    backgroundcolor: nome_do_arquivo.nomeDaVariavel
+
+
+MIXINS 
+
+    declara blocos de estilos para serem reutilizados facilmente
+    @mixin nomeDoBloco() {
+        estilo: valor;
+    }
+
+    .classeExemplo {
+        @include nomeDoBloco;
+    }
+
