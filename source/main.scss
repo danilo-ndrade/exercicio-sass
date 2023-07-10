@@ -1,0 +1,175 @@
+@use './config/reset';
+@use './config/variables';
+
+@mixin greenGlow() {
+    box-shadow: 10px 5px 50px variables.$primaryColor;
+}
+
+body {
+    background-color: variables.$backgroundColor;
+    color: variables.$textColor;
+}
+
+img {
+    max-width: 500px;
+    border-radius: 2em;
+    @include greenGlow;
+}
+
+.main-container {
+
+    padding: 5em;
+
+    .page-header-container {
+
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        text-align: center;
+        
+
+       
+        h1 {
+            display: inline-block;
+            border-radius: 2em;
+            @include greenGlow;
+            padding: 0.3em;
+            font-size: 2em;
+            width: 100%;
+            margin: 0;
+            transition: all 3000ms;
+            animation: glow 3000ms ease-in-out infinite;
+
+            @keyframes glow {
+                0% {
+                    box-shadow: 10px 5px 50px variables.$primaryColor;
+                }
+                50% {
+                    box-shadow: 10px 5px 300px variables.$primaryColor;
+                }
+                100%{
+                    box-shadow: 10px 5px 50px variables.$primaryColor;
+                }
+            }
+
+
+            &:hover {
+                @include greenGlow;
+                
+            }
+        }
+    }
+    
+
+}
+
+.body-container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 1em;
+
+    section {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    p {
+        font-family: variables.$font2;
+        font-size: 1.5em;
+    }
+}
+
+@mixin formElements(){
+        height: 30px;
+        background-color: variables.$backgroundColor;
+        border: 2px solid variables.$primaryColor;
+        font-family: variables.$font2;
+        padding: 0.5em;
+}
+
+.form-container {
+
+    border: 2px solid variables.$primaryColor;
+    padding: 1em;
+    margin-top: 1em;
+    width: 50%;
+
+    h1 {
+        margin-bottom: 1em;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input {
+            @include formElements;
+            font-family: variables.$font2;
+        }
+
+    }
+    
+    button {
+        @include formElements;
+
+        &:hover {
+            background-color: variables.$primaryColor;
+        }
+
+        @include greenGlow;
+    }
+
+}
+
+
+@media  screen and (max-width: variables.$mobile) {
+
+    img {
+        width: 100%;
+    }
+
+    .page-header-container {
+        flex-direction: column;
+
+        h1 {
+            font-size: 1em;
+        }
+    }
+
+    .main-container {
+        
+    }
+
+    .body-container {
+        section {
+            flex-direction: column;
+
+            p {
+                text-align: justify;
+                font-size: 1em;
+                
+            }
+        }
+    }
+    
+    .form-container {
+        width: 100%;
+    }
+
+
+}
+

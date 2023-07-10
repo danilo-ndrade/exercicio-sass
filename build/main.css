@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgb(21, 255, 0);
+  font-family: "Special Elite", cursive;
+}
+
+body {
+  background-color: #252525;
+  color: #d8d8d8;
+}
+
+img {
+  max-width: 500px;
+  border-radius: 2em;
+  box-shadow: 10px 5px 50px rgb(21, 255, 0);
+}
+
+.main-container {
+  padding: 5em;
+}
+.main-container .page-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  text-align: center;
+}
+.main-container .page-header-container h1 {
+  display: inline-block;
+  border-radius: 2em;
+  box-shadow: 10px 5px 50px rgb(21, 255, 0);
+  padding: 0.3em;
+  font-size: 2em;
+  width: 100%;
+  margin: 0;
+  transition: all 3000ms;
+  animation: glow 3000ms ease-in-out infinite;
+}
+@keyframes glow {
+  0% {
+    box-shadow: 10px 5px 50px rgb(21, 255, 0);
+  }
+  50% {
+    box-shadow: 10px 5px 300px rgb(21, 255, 0);
+  }
+  100% {
+    box-shadow: 10px 5px 50px rgb(21, 255, 0);
+  }
+}
+.main-container .page-header-container h1:hover {
+  box-shadow: 10px 5px 50px rgb(21, 255, 0);
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 1em;
+}
+.body-container section {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+.body-container p {
+  font-family: "Rubik Burned", cursive;
+  font-size: 1.5em;
+}
+
+.form-container {
+  border: 2px solid rgb(21, 255, 0);
+  padding: 1em;
+  margin-top: 1em;
+  width: 50%;
+}
+.form-container h1 {
+  margin-bottom: 1em;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.form-container .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-container .form-field input {
+  height: 30px;
+  background-color: #252525;
+  border: 2px solid rgb(21, 255, 0);
+  font-family: "Rubik Burned", cursive;
+  padding: 0.5em;
+  font-family: "Rubik Burned", cursive;
+}
+.form-container button {
+  height: 30px;
+  background-color: #252525;
+  border: 2px solid rgb(21, 255, 0);
+  font-family: "Rubik Burned", cursive;
+  padding: 0.5em;
+  box-shadow: 10px 5px 50px rgb(21, 255, 0);
+}
+.form-container button:hover {
+  background-color: rgb(21, 255, 0);
+}
+
+@media screen and (max-width: 767px) {
+  img {
+    width: 100%;
+  }
+  .page-header-container {
+    flex-direction: column;
+  }
+  .page-header-container h1 {
+    font-size: 1em;
+  }
+  .body-container section {
+    flex-direction: column;
+  }
+  .body-container section p {
+    text-align: justify;
+    font-size: 1em;
+  }
+  .form-container {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
